@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EhiPay - Fast & Secure Payments</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<header class="bg-yellow-400 shadow-md">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-gray-900">EhiPay</h1>
+    <nav>
+      <ul class="flex space-x-6">
+        <li><a href="#home" class="hover:text-white">Home</a></li>
+        <li><a href="#services" class="hover:text-white">Services</a></li>
+        <li><a href="#about" class="hover:text-white">About</a></li>
+        <li><a href="#contact" class="hover:text-white">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section id="home" class="bg-gray-900 text-white text-center py-20">
+  <h2 class="text-4xl md:text-5xl font-bold mb-4">Fast & Secure Payments Anywhere</h2>
+  <p class="text-lg md:text-xl mb-6">Pay bills, top-up, and transfer funds with ease.</p>
+  <a href="#services" class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500">Get Started</a>
+</section>
+
+<section id="services" class="max-w-7xl mx-auto px-6 py-16">
+  <h3 class="text-3xl font-bold text-center mb-12">Our Services</h3>
+  <div class="grid md:grid-cols-3 gap-8">
+
+    <!-- Bill Payments -->
+    <div class="bg-white p-6 rounded-2xl shadow-md text-center">
+      <h4 class="text-xl font-semibold mb-4">Bill Payments</h4>
+      <p>Pay electricity, water, gas, and other utility bills quickly and securely.</p>
+      <button class="stripePayBtn mt-4 w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-6 py-3 rounded-lg shadow-md"
+              data-amount="50" data-item="Bill Payment">
+        Pay $50 with Stripe
+      </button>
+      <button class="paystackPayBtn mt-4 w-full bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md"
+              data-amount="5000" data-item="Bill Payment">
+        Pay ₦5000 with Paystack
+      </button>
+    </div>
+
+    <!-- Mobile Top-Up -->
+    <div class="bg-white p-6 rounded-2xl shadow-md text-center">
+      <h4 class="text-xl font-semibold mb-4">Mobile Top-Up</h4>
+      <p>Recharge your phone or send airtime to loved ones instantly.</p>
+      <button class="stripePayBtn mt-4 w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-6 py-3 rounded-lg shadow-md"
+              data-amount="20" data-item="Mobile Top-Up">
+        Pay $20 with Stripe
+      </button>
+      <button class="paystackPayBtn mt-4 w-full bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md"
+              data-amount="2000" data-item="Mobile Top-Up">
+        Pay ₦2000 with Paystack
+      </button>
+    </div>
+
+    <!-- Money Transfers -->
+    <div class="bg-white p-6 rounded-2xl shadow-md text-center">
+      <h4 class="text-xl font-semibold mb-4">Money Transfers</h4>
+      <p>Send and receive money safely with low transaction fees.</p>
+      <button class="stripePayBtn mt-4 w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-6 py-3 rounded-lg shadow-md"
+              data-amount="100" data-item="Money Transfer">
+        Pay $100 with Stripe
+      </button>
+      <button class="paystackPayBtn mt-4 w-full bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md"
+              data-amount="10000" data-item="Money Transfer">
+        Pay ₦10000 with Paystack
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<section id="about" class="bg-gray-100 py-16 px-6">
+  <div class="max-w-5xl mx-auto text-center">
+    <h3 class="text-3xl font-bold mb-6">About EhiPay</h3>
+    <p class="text-lg">We are committed to making payments fast, reliable, and accessible to everyone. With EhiPay, you can manage bills, airtime, and transfers with just a few clicks.</p>
+  </div>
+</section>
+
+<section id="contact" class="max-w-7xl mx-auto px-6 py-16">
+  <h3 class="text-3xl font-bold text-center mb-8">Get in Touch</h3>
+  <form class="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-md">
+    <div class="mb-4">
+      <label class="block text-left mb-2">Name</label>
+      <input type="text" class="w-full border rounded-lg px-4 py-2" placeholder="Your Name" required>
+    </div>
+    <div class="mb-4">
+      <label class="block text-left mb-2">Email</label>
+      <input type="email" class="w-full border rounded-lg px-4 py-2" placeholder="you@example.com" required>
+    </div>
+    <div class="mb-4">
+      <label class="block text-left mb-2">Message</label>
+      <textarea class="w-full border rounded-lg px-4 py-2" rows="4" placeholder="Your Message" required></textarea>
+    </div>
+    <button type="submit" class="w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-3 rounded-lg">Send Message</button>
+  </form>
+</section>
+
+<footer class="bg-gray-900 text-white py-6 text-center">
+  <p>&copy; 2025 EhiPay. All rights reserved.</p>
+</footer>
+
+<script>
+  // Stripe Buttons
+  document.querySelectorAll(".stripePayBtn").forEach(btn => {
+    btn.addEventListener("click", async () => {
+      const amount = btn.dataset.amount;
+      const item = btn.dataset.item;
+      const response = await fetch("http://localhost:3000/create-checkout-session", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ amount, item })
+      });
+      const data = await response.json();
+      window.location = data.url;
+    });
+  });
+
+  // Paystack Buttons
+  document.querySelectorAll(".paystackPayBtn").forEach(btn => {
+    btn.addEventListener("click", function () {
+      const amount = btn.dataset.amount;
+      const item = btn.dataset.item;
+      let handler = PaystackPop.setup({
+        key: 'YOUR_PAYSTACK_PUBLIC_KEY',
+        email: 'customer@example.com',
+        amount: amount * 100,
+        currency: "NGN",
+        ref: '' + Math.floor(Math.random() * 1000000000 + 1),
+        callback: function (response) {
+          window.location = "success.html";
+        },
+        onClose: function () {
+          window.location = "cancel.html";
+        },
+      });
+      handler.openIframe();
+    });
+  });
+</script>
+
+</body>
+</html>
